@@ -2,6 +2,7 @@ package com.aregyan.github.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.aregyan.github.domain.AuditDetails
 
 @Dao
 interface UsersDao {
@@ -21,7 +22,20 @@ interface UsersDao {
     fun insertUserDetails(databaseUserDetails: DatabaseUserDetails)
 }
 
-@Database(entities = [DatabaseUserListItem::class, DatabaseUserDetails::class], version = 1, exportSchema = false)
-abstract class UsersDatabase : RoomDatabase() {
+
+@Dao
+interface AuditDao {
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAudit(auditDetails: DatabaseAuditDetails)
+
+    @Query("select * from DatabaseAuditDetails")
+    fun getAudits(): LiveData<List<DatabaseAuditDetails>>
+
+}
+
+@Database(entities = [DatabaseUserListItem::class, DatabaseUserDetails::class , DatabaseAuditDetails::class], version = 1, exportSchema = false)
+abstract class DataBase : RoomDatabase() {
     abstract val usersDao: UsersDao
+    abstract val auditDao : AuditDao
 }

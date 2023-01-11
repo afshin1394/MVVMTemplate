@@ -1,10 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.fragment.app.FragmentContainerView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?><!-- Use DrawerLayout as root container for activity -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_host_fragment"
-    android:name="androidx.navigation.fragment.NavHostFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:defaultNavHost="true"
-    app:navGraph="@navigation/main" />
+    android:fitsSystemWindows="true"
+
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:layout_weight="10"
+            app:navGraph="@navigation/main"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:defaultNavHost="true"
+            android:id="@+id/nav_host_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+        <com.google.android.material.tabs.TabLayout
+            android:layout_weight="1"
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" >
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Audit" />
+        </com.google.android.material.tabs.TabLayout>
+    </LinearLayout>
+</FrameLayout>

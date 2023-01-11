@@ -2,7 +2,7 @@ package com.aregyan.github.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
-import com.aregyan.github.database.UsersDatabase
+import com.aregyan.github.database.DataBase
 import com.aregyan.github.database.asDomainModel
 import com.aregyan.github.domain.UserListItem
 import com.aregyan.github.network.UserListService
@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 class UserListRepository @Inject constructor(
     private val userListService: UserListService,
-    private val database: UsersDatabase
+    private val database: DataBase
 ) {
 
     val users: LiveData<List<UserListItem>> =

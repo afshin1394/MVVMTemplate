@@ -10,11 +10,12 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.aregyan.github.R
 import com.aregyan.github.databinding.FragmentUserListBinding
+import com.aregyan.github.views.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class UserListFragment : Fragment() {
+class UserListFragment : BaseFragment<FragmentUserListBinding>() {
     private val viewModel: UserListViewModel by viewModels()
 
     @Inject
@@ -39,20 +40,29 @@ class UserListFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding.recyclerView.adapter = null
+        _binding = null
+    }
+
+    override fun inflateBiding(
+        inflater: LayoutInflater?,
+        container: ViewGroup?
+    ): FragmentUserListBinding {
+        return FragmentUserListBinding.inflate(layoutInflater,container,false)
+    }
+
+    override fun initView() {
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.recyclerView.adapter = adapter
         viewModel.data.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
         adapter.clickListener.onItemClick = {
             findNavController().navigate(UserListFragmentDirections.actionUsersListToUserDetails(it.username))
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding.recyclerView.adapter = null
-        _binding = null
     }
 
 }

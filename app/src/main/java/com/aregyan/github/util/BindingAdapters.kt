@@ -14,6 +14,14 @@ fun loadImage(view: ImageView, url: String?) {
     }
 }
 
+@BindingAdapter("imageUrl")
+fun loadImage(view: ImageView, image: ByteArray?) {
+    if (image?.size!! >0) {
+        Glide.with(view.context).load(image).into(view)
+    }
+}
+
+
 @BindingAdapter("dateFormatter")
 fun TextView.dateFormatter(string: String?) {
     if (string?.isNotEmpty() == true) {

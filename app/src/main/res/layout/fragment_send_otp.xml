@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222222"
+    android:gravity="center_horizontal"
+    android:layoutDirection="ltr"
+    tools:context=".views.login.verifyotp.VerifyOtpFragment">
+
+    <LinearLayout
+        android:id="@+id/lin_header"
+        android:background="@drawable/header_background"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="@dimen/_98sdp"
+            android:layout_height="@dimen/_93sdp"/>
+
+
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/lin_send_phone"
+        android:layout_below="@+id/lin_header"
+        >
+
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/network_yellow"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#FFBE00"
+            android:textStyle="bold|italic"
+            android:textSize="@dimen/_30sdp"
+            android:text="IOS"/>
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_send_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:elevation="@dimen/_10sdp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="54.5dp"
+            android:layout_marginRight="54.5dp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/edit_text_background"
+            android:elevation="@dimen/_9sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_9sdp"
+                android:gravity="center"
+                android:hint="+98 "
+                android:textColorHint="#b1b1b1"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_9sdp"
+                android:inputType="phone"
+                android:maxLength="9"
+                android:textColor="@color/white"
+                android:textColorHint="#b1b1b1"
+                android:textCursorDrawable="@drawable/cursor_shape"
+                android:textSize="20sp"
+                app:backgroundTint="@color/primaryColor" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_send_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/button"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:stateListAnimator="@animator/zoom_animator">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/sendConfirmCode"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layoutDirection="rtl"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        >
+        <FrameLayout
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            >
+
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:lottie_rawRes="@raw/network_yellow"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="#FFBE00"
+                android:textStyle="bold|italic"
+                android:textSize="@dimen/_4sdp"
+                android:text="IOS"/>
+
+
+        </FrameLayout>
+    <TextView
+        android:layout_gravity="center"
+        android:textColor="@color/primaryColor"
+        android:layout_margin="@dimen/_2sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 1.0.0"/>
+    </LinearLayout>
+
+</RelativeLayout>
