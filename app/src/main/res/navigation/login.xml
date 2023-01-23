@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/sendOtpFragment"
-        android:name="com.aregyan.github.views.login.sendotp.SendOtpFragment"
+        android:name="com.irancell.nwg.ios.views.login.sendotp.SendOtpFragment"
         android:label="fragment_send_otp"
         tools:layout="@layout/fragment_send_otp" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/verifyOtpFragment"
-        android:name="com.aregyan.github.views.login.verifyotp.VerifyOtpFragment"
+        android:name="com.irancell.nwg.ios.views.login.verifyotp.VerifyOtpFragment"
         android:label="fragment_verify_otp"
         tools:layout="@layout/fragment_verify_otp" />
 </navigation>

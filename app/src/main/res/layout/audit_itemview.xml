@@ -2,16 +2,18 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".views.audit.activity.AuditActivity"
+    >
     <data>
 
         <variable
             name="data"
-            type="com.aregyan.github.domain.AuditDetails" />
-
+            type="com.irancell.nwg.ios.domain.AuditDetails" />
         <variable
             name="clickListener"
-            type="com.aregyan.github.views.audit.ClickListener" />
+            type="com.irancell.nwg.ios.views.audit.ClickListener" />
+
     </data>
 <LinearLayout
     android:layoutDirection="rtl"
@@ -28,7 +30,6 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <ImageView
-                android:onClick="@{() -> clickListener.onClick(data)}"
                 android:id="@+id/iv_camera"
                 android:src="@drawable/ic_baseline_camera_alt_24"
                 android:layout_margin="10dp"
@@ -45,7 +46,6 @@
                 android:gravity="right"/>
 
             <ImageView
-                android:onClick="@{() -> clickListener.onClick(data)}"
                 android:id="@+id/iv_image"
                 app:imageUrl="@{data.image}"
                 android:src="@drawable/ic_launcher_background"

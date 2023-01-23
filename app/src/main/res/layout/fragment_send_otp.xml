@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
+            android:src="@drawable/irancell_logo"
             android:layout_gravity="center"
             android:layout_width="@dimen/_98sdp"
             android:layout_height="@dimen/_93sdp"/>
@@ -94,7 +95,8 @@
                 android:textColorHint="#b1b1b1"
                 android:textCursorDrawable="@drawable/cursor_shape"
                 android:textSize="20sp"
-                app:backgroundTint="@color/primaryColor" />
+                app:backgroundTint="@color/colorPrimary"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
         </LinearLayout>
 
         <LinearLayout
@@ -157,7 +159,7 @@
         </FrameLayout>
     <TextView
         android:layout_gravity="center"
-        android:textColor="@color/primaryColor"
+        android:textColor="@color/colorPrimary"
         android:layout_margin="@dimen/_2sdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

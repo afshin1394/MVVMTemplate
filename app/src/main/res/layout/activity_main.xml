@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!-- Use DrawerLayout as root container for activity -->
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -18,23 +19,27 @@
             app:navGraph="@navigation/main"
             android:name="androidx.navigation.fragment.NavHostFragment"
             app:defaultNavHost="true"
-            android:id="@+id/nav_host_fragment_container"
+            android:id="@+id/nav_host_main"
             android:layout_width="match_parent"
             android:layout_height="0dp" />
         <com.google.android.material.tabs.TabLayout
             android:layout_weight="1"
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
+            app:tabTextColor="@color/colorTriary"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabIndicatorGravity="top"
+            app:tabSelectedTextColor="@color/colorPrimary"
             android:layout_height="0dp" >
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="User" />
+                android:text="BRTELL" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Audit" />
+                android:text="BRCELL" />
         </com.google.android.material.tabs.TabLayout>
     </LinearLayout>
 </FrameLayout>
