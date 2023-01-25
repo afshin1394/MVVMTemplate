@@ -3,9 +3,14 @@ package com.irancell.nwg.ios.util
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.irancell.nwg.ios.domain.attribute.AttrElement
+import com.irancell.nwg.ios.views.audit.AttrElementAdapter
+import com.irancell.nwg.ios.views.audit.SubGroupAdapter
 import java.text.SimpleDateFormat
 import java.util.*
+import javax.inject.Inject
 
 @BindingAdapter("imageUrl")
 fun loadImage(view: ImageView, url: String?) {
@@ -20,6 +25,7 @@ fun loadImage(view: ImageView, image: ByteArray?) {
         Glide.with(view.context).load(image).into(view)
     }
 }
+
 
 
 @BindingAdapter("dateFormatter")

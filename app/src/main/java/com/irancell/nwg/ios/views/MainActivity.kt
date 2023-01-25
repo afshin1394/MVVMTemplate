@@ -31,7 +31,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() 
 
 
     override fun initViews() {
-        requestPermissions(arrayOf(Manifest.permission.CAMERA), PERMISSION_REQUEST_CODE)
+        checkPermissions(arrayOf(Manifest.permission.CAMERA))
     }
 
     override fun onPermission(basePermissionModels: ArrayList<BasePermissionModel>) {
@@ -69,7 +69,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainActivityViewModel>() 
 
 
             }else{
-                requestPermissions(arrayOf(Manifest.permission.CAMERA), PERMISSION_REQUEST_CODE)
+                checkPermissions(arrayOf(Manifest.permission.CAMERA))
             }
         }
 

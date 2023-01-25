@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".views.audit.activity.AuditActivity">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.irancell.nwg.ios.domain.attribute.AttrElement" />
+
+
+    </data>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filledTextField"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@{data.attrElementName}"
+
+        >
+
+        <!--this is the actual edit text which takes the input-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etv_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+</layout>

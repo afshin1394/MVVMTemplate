@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.audit.activity.AuditActivity">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.irancell.nwg.ios.domain.attribute.SubGroup" />
+
+
+        <variable
+            name="adapter"
+            type="com.irancell.nwg.ios.views.audit.AttrElementAdapter" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/lin_itemChoice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:layout_margin="@dimen/_4sdp"
+        android:layoutDirection="rtl"
+        android:orientation="vertical"
+
+        >
+
+        <LinearLayout
+            android:id="@+id/lin_filter_title"
+            android:layout_width="match_parent"
+            android:elevation="@dimen/_1sdp"
+
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/sub_group_item_background"
+            android:orientation="horizontal"
+            android:padding="@dimen/_2sdp">
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:id="@+id/img_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/arrow_down" />
+            <TextView
+                android:id="@+id/TV_filter_title"
+                style="@style/tv_sub_group_style"
+                android:layout_gravity="center"
+                android:layout_weight="10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_2sdp"
+                android:text="@{data.subGroupName}" />
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginTop="-10dp"
+            android:paddingTop="@dimen/_20sdp"
+            android:id="@+id/RV_elements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_4sdp"
+            android:background="#837037"
+            android:layoutDirection="ltr"
+            android:visibility="visible" />
+
+
+    </LinearLayout>
+
+</layout>

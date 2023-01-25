@@ -18,4 +18,9 @@ class ViewPagerAdapter(var fragments : List<Fragment>,fragmentManager: FragmentM
     }
 
 
+    fun getFragment(position: Int):Fragment{
+        return fragments.get(position)
+    }
+
+
 }

@@ -1,6 +1,7 @@
 package com.irancell.nwg.ios.di
 
 import androidx.databinding.ktx.BuildConfig
+import com.irancell.nwg.ios.network.LoginService
 import com.irancell.nwg.ios.network.UserDetailsService
 import com.irancell.nwg.ios.network.UserListService
 
@@ -50,5 +51,10 @@ object NetworkModule {
     @Singleton
     fun provideUserDetailsService(retrofit: Retrofit): UserDetailsService =
         retrofit.create(UserDetailsService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideLoginService(retrofit: Retrofit): LoginService =
+        retrofit.create(LoginService::class.java)
 
 }

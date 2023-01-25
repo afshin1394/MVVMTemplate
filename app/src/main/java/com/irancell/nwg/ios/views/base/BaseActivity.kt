@@ -1,5 +1,6 @@
 package com.irancell.nwg.ios.views.base
 
+import android.app.Fragment
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -15,7 +16,7 @@ import com.irancell.nwg.ios.R
 import com.irancell.nwg.ios.base.BasePermissionModel
 
 
-abstract class BaseActivity<V : ViewBinding, VMC : ViewModel> : FragmentActivity() {
+abstract class BaseActivity<V : ViewBinding, VMC : ViewModel> : AppCompatActivity() {
     val PERMISSION_REQUEST_CODE = 9824
     lateinit var activity: AppCompatActivity
     lateinit var navController: NavController
@@ -26,6 +27,8 @@ abstract class BaseActivity<V : ViewBinding, VMC : ViewModel> : FragmentActivity
     abstract fun initNavController(): NavController
     abstract fun inflateBiding(): V
     abstract fun initViewModel() : VMC
+
+
     open fun onPermission(basePermissionModels: ArrayList<BasePermissionModel>) {
 
     }
@@ -101,8 +104,9 @@ abstract class BaseActivity<V : ViewBinding, VMC : ViewModel> : FragmentActivity
             permissionArray.add(BasePermissionModel(permission, true))
         }
         requestPermissions(permissions, PERMISSION_REQUEST_CODE)
-        onPermission(permissionArray)
     }
+
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -118,6 +122,7 @@ abstract class BaseActivity<V : ViewBinding, VMC : ViewModel> : FragmentActivity
                     )
                 )
             }
+
             onPermission(permissionResults)
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults)

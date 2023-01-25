@@ -70,11 +70,11 @@ class AttributeRepository @Inject constructor(
 
 
         var attElement1 = AttrElement(1, "CR_Open", 1, "Image", null, data = listOf(data1))
-        var attElement2 = AttrElement(1, "CR_Open", 1, "Image", null, data = listOf(data1))
-        var attElement3 = AttrElement(1, "CR_Open", 1, "Image", null, data = listOf(data1))
-        var attElement4 = AttrElement(1, "CR_Open", 1, "Image", null, data = listOf(data1))
-        var attElement5 = AttrElement(1, "CR_Open", 1, "Image", null, data = listOf(data1))
-        var attElement6 = AttrElement(1, "CR_Open", 1, "Image", null, data = listOf(data1))
+        var attElement2 = AttrElement(2, "Problematic_comments", 2, "Comment", null, data = listOf(data1))
+        var attElement3 = AttrElement(3, "CR_Open", 1, "Image", null, data = listOf(data1))
+        var attElement4 = AttrElement(4, "CR_Open", 1, "Image", null, data = listOf(data1))
+        var attElement5 = AttrElement(5, "CR_Open", 1, "Image", null, data = listOf(data1))
+        var attElement6 = AttrElement(6, "CR_Open", 1, "Image", null, data = listOf(data1))
         var attElement7 = AttrElement(1, "CR_Open", 1, "Image", null, data = listOf(data1))
         var attElement8 = AttrElement(1, "CR_Open", 1, "Image", null, data = listOf(data1))
         var attElement9 = AttrElement(1, "CR_Open", 1, "Image", null, data = listOf(data1))

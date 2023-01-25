@@ -1,6 +1,7 @@
 package com.irancell.nwg.ios.views.audit.activity
 
 import androidx.core.os.bundleOf
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -8,6 +9,7 @@ import androidx.navigation.NavController
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.irancell.nwg.ios.databinding.ActivityAuditBinding
+import com.irancell.nwg.ios.domain.attribute.Group
 import com.irancell.nwg.ios.views.audit.adapter.ViewPagerAdapter
 import com.irancell.nwg.ios.views.audit.Fragment.AuditFragment
 import com.irancell.nwg.ios.views.audit.viewModel.AuditViewModel
@@ -28,6 +30,7 @@ class AuditActivity : BaseActivity<ActivityAuditBinding, AuditViewModel>() {
 
         viewModel.getAttributes(1)
         var fragments : ArrayList<Fragment> = ArrayList()
+        var tabTitiles : ArrayList<String> = ArrayList()
         viewModel.getGroups().observe(this) {
             Timber.tag("Sizeeee").i("initViews: %s", it.size)
             it.iterator().forEach {
@@ -35,26 +38,23 @@ class AuditActivity : BaseActivity<ActivityAuditBinding, AuditViewModel>() {
                 tab.tag = it.groupName
                 tab.id = it.groupId
                 tab.text = it.groupName
+                tabTitiles.add(it.groupName)
                 Timber.tag("groupNameee").i("initViews: %s", it.groupName)
                 viewBinding.tabLayout.addTab(tab)
                 var fragment = AuditFragment()
-                fragment.arguments = bundleOf(Pair( "group",it))
+                fragment.arguments = bundleOf(Pair( "groupId",it))
                 fragments.add(fragment)
             }
 
 
-
-            viewBinding.viewPager.adapter =
-                ViewPagerAdapter(fragments,supportFragmentManager,lifecycle)
+            viewBinding.viewPager.adapter =  ViewPagerAdapter(fragments,supportFragmentManager,lifecycle)
 
 
             val tabLayout: TabLayout = viewBinding.tabLayout
             TabLayoutMediator(
                 tabLayout, viewBinding.viewPager
             ) { tab, position ->
-                tab.setText(
-                   tab.text
-                )
+                tab.text = tabTitiles.get(position)
             }.attach()
 
 

@@ -26,7 +26,7 @@
             android:layout_weight="1"
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
-            app:tabTextColor="@color/colorTriary"
+            app:tabTextColor="@color/color_tertiary"
             app:tabIndicatorColor="@color/colorPrimary"
             app:tabIndicatorGravity="top"
             app:tabSelectedTextColor="@color/colorPrimary"
